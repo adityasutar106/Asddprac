@@ -1,0 +1,36 @@
+Implementation: Step 1: Sign in to the AWS Management Console 
+1. Go to the AWS Management Console. 
+2. Sign in with your AWS account credentials. 
+Step 2: Navigate to AWS Lambda
+1. In the AWS Management Console, find and select Lambda from the Services menu. 
+Step 3: Create a New Lambda Function
+1. Click on Create function. 
+2. You will be presented with four options:
+o Author from scratch: 
+Create a function from scratch.
+o Use a blueprint: Start with a sample Lambda function. 
+o Container image: Deploy a function defined as a container image. 
+o Browse serverless app repository: Use a pre-built serverless application. 
+For simplicity, select Author from scratch. 
+Step 4: Configure the Function
+1. Function name: Enter a unique name for your Lambda function (e.g., MyFirstLambda). 
+2. Runtime: Choose the runtime environment for your code (e.g., Python 3.x, Node.js 14.x, etc.). 
+3. Role: o If you dont have an existing IAM role, select Create a new role with basic Lambda permissions. 
+o If you have an existing IAM role, you can use that by selecting Use an existing role. 
+Step 5: Write the Lambda Function Code 
+1. Once the function is created, you will be redirected to the functions configuration page. 
+2. Scroll down to the Code section. 
+3. In the code editor, you can write your Lambda function code. For example, if you are using Python: def lambda_handler(event, context): return { ‘statusCode’;: 200, ‘body’;: ‘Hello, AWS Lambda!’ } 
+4. The lambda_handler function is the entry point for your Lambda function. The event parameter contains the input data, and the context parameter provides runtime information. 
+Step 6: Test the Function 
+1. At the top of the function configuration page, click on Test. 
+2. Create a new test event by choosing Create new test event. 
+3. Provide a name for the test event (e.g., TestEvent), and you can use the default event template.
+4. Click Create and then click Test again to invoke the function. 
+Step 7: Review the Execution Results 
+1. After testing, you can review the execution results in the Execution result section. 
+2. If everything is set up correctly, you should see the output {“statusCode&quot”: 200, “body”: “Hello, AWS Lambda!”}. 
+Step 8: Deploy the Function (Optional) 
+1. If you want to deploy the Lambda function as part of a more complex architecture, consider using AWS services like API Gateway, S3, or Step Functions to trigger the Lambda function. 
+Step 9: Monitor and Manage 
+1. AWS Lambda provides built-in monitoring through Amazon CloudWatch. You can view logs and performance metrics to manage and troubleshoot your Lambda function. 
