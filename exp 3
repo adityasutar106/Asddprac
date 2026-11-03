@@ -1,0 +1,214 @@
+# Experiment No. 3 – Installation and Configuration of Jenkins
+
+## Aim
+To install and configure Jenkins on Windows and create and execute a Freestyle project to understand the basics of Continuous Integration (CI).
+
+## Software Requirements
+1. Windows 10/11
+2. Java Development Kit (JDK 25)
+3. Jenkins
+4. Google Chrome or any web browser
+5. Internet connection
+
+---
+
+# Detailed Procedure
+
+## Part A: Installing Jenkins on Windows
+
+**Step 1: Download Jenkins**
+
+1. Open Google Chrome.
+2. Visit the official Jenkins website: https://www.jenkins.io/download/
+3. Scroll to the Windows section.
+4. Download the Windows installer (`.msi`).
+5. Wait for the download to complete.
+
+**Step 2: Run the Jenkins Installer**
+
+1. Open the Downloads folder.
+2. Double-click the downloaded Jenkins `.msi` file.
+3. The Jenkins Setup Wizard will appear.
+4. Click Next.
+5. Select the installation destination. Keep the default location unless required otherwise.
+6. Click Next.
+
+**Step 3: Configure Jenkins Service**
+
+1. Select the option to run Jenkins as a Windows service.
+2. Continue with the default service configuration.
+3. Complete the installation wizard by clicking Install.
+4. Wait until installation finishes.
+5. Click Finish.
+
+**Step 4: Verify Jenkins Service**
+
+1. Press `Windows + R`.
+2. Type `services.msc`.
+3. Press Enter.
+4. Find the service named **Jenkins**.
+5. Check that its status is Running.
+
+Jenkins runs in the background as a Windows service.
+
+---
+
+## Part B: Unlocking Jenkins
+
+**Step 5: Open Jenkins in the Browser**
+
+1. Open Google Chrome.
+2. Enter the following address:
+
+   `http://localhost:8080`
+
+3. Press Enter.
+4. The Jenkins Unlock page should appear.
+
+**Step 6: Find the Initial Administrator Password**
+
+1. Open Command Prompt.
+2. Enter the following command:
+
+```cmd
+type "C:\ProgramData\Jenkins\.jenkins\secrets\initialAdminPassword"
+```
+
+3. Press Enter.
+4. The initial administrator password will be displayed.
+5. Copy the password carefully.
+
+**Step 7: Unlock Jenkins**
+
+1. Return to the Jenkins browser tab.
+2. Paste the copied password into the Administrator Password field.
+3. Click Continue.
+
+Jenkins is now unlocked and ready for initial configuration.
+
+---
+
+## Part C: Installing Suggested Plugins
+
+**Step 8: Install Plugins**
+
+1. On the Customize Jenkins page, select **Install suggested plugins**.
+2. Jenkins will automatically download and install the recommended plugins.
+3. Wait until the installation process finishes.
+4. Do not close the browser while installation is in progress.
+
+Plugins provide additional functionality to Jenkins.
+
+---
+
+## Part D: Creating an Administrator Account
+
+**Step 9: Create Your Account**
+
+1. After plugin installation, the Create First Admin User page appears.
+2. Enter the following details:
+   - Username
+   - Password
+   - Confirm Password
+   - Full Name
+   - Email Address
+3. Click Save and Continue.
+
+**Step 10: Complete Jenkins Configuration**
+
+1. Verify the Jenkins URL is `http://localhost:8080/`.
+2. Click Save and Finish.
+3. Click Start using Jenkins.
+4. The Jenkins Dashboard will open.
+
+The dashboard is the main interface used to create and manage Jenkins projects.
+
+---
+
+# Part E: Creating a Freestyle Project
+
+**Step 11: Create a New Item**
+
+1. On the Jenkins Dashboard, locate the left-side menu.
+2. Click **New Item**.
+3. A page will open asking for an item name.
+4. Enter:
+
+   `Hello-World`
+
+5. Select **Freestyle project** from the available project types.
+6. Click OK.
+
+A Freestyle project is a basic Jenkins job that allows users to configure build steps through the graphical interface.
+
+**Step 12: Configure the Project**
+
+1. The project configuration page will open.
+2. Locate the General section.
+3. You can leave the default settings unchanged.
+4. Scroll down to the Build Steps section.
+
+**Step 13: Add a Build Step**
+
+1. Locate the **Add build step** dropdown menu.
+2. Click it.
+3. Select **Execute Windows batch command**.
+4. A command text box will appear.
+
+**Step 14: Enter Windows Batch Commands**
+
+Enter the following commands inside the text box:
+
+```bat
+echo Hello World
+echo Welcome to Jenkins
+echo Experiment 3 completed successfully
+```
+
+Explanation:
+- `echo Hello World` displays Hello World in the console.
+- `echo Welcome to Jenkins` displays a welcome message.
+- `echo Experiment 3 completed successfully` displays the experiment completion message.
+
+5. Scroll to the bottom of the page.
+6. Click Save.
+
+The Freestyle project has now been configured.
+
+---
+
+# Part F: Executing the Jenkins Build
+
+**Step 15: Open the Project**
+
+1. After saving, Jenkins will open the `Hello-World` project page.
+2. Locate the left-side menu.
+3. Find the **Build Now** option.
+
+**Step 16: Execute the Build**
+
+1. Click **Build Now**.
+2. Jenkins will start executing the configured batch commands.
+3. Look at the Build History section on the job page.
+4. A new build number, such as `#1`, will appear.
+5. Wait until the build finishes.
+
+**Step 17: Check Build History**
+
+1. Locate the Build History section.
+2. Click the latest build number.
+3. The build details page will open.
+4. Click **Console Output**.
+
+**Step 18: Verify Console Output**
+
+The Console Output page displays all messages generated during the build.
+
+Expected output:
+
+```text
+Hello World
+Welcome to Jenkins
+Experiment 3 completed successfully
+Finished: SUCCESS
+```
