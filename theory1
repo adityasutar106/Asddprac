@@ -1,0 +1,162 @@
+exp 1 
+Open Jira and log in using an Atlassian account
+
+Create a new Software Development project using the Scrum template.
+
+Enter the project name and project key.
+
+Create Epics such as User Management, Restaurant Management, Order Management, Payment Management and Delivery Tracking.
+
+Create User Stories and link them to the respective Epics.
+
+Create a Sprint and add selected User Stories to it.
+
+Start the Sprint by specifying its duration and Sprint Goal.
+
+Open the Scrum Board and manage tasks using To Do, In Progress and Done columns.
+
+Explore the List View to display project tasks in tabular format.
+
+Explore the Timeline View to visualize project schedules.
+
+Add collaborators through Project Settings → People.
+
+Assign tasks to team members using the Assignee field.
+
+Understand the DevOps workflow by connecting project management with version control and CI/CD tools.
+
+
+exp2
+
+. Install Git and verify its installation.
+git --version
+
+
+2. Configure Git username and email.
+git config --global user.name "Your Name"
+git config --global user.email "your-email@gmail.com"
+
+
+3. Verify Git configuration.
+git config --list
+
+
+4. Create a new project folder and initialize Git.
+mkdir gitproject
+cd gitproject
+git init
+
+
+5. Check the repository status.
+git status
+
+
+6. Create a README file.
+echo "My First Git Project" > README.md
+
+
+7. Add files to the staging area.
+git add .
+
+
+8. Commit the changes.
+git commit -m "Initial Commit"
+
+
+9. Create a GitHub repository named Git-Practical-2.
+10. Connect the local repository to GitHub.
+git branch -M main
+git remote add origin <GitHub-Repository-URL>
+
+
+11. Push the code to GitHub.
+git push -u origin main
+
+
+Collaboration Workflow
+12. Create a new feature branch.
+git switch -c feature/update-readme
+
+
+13. Modify the README file and add collaboration-related content.
+14. Stage and commit the changes.
+git add README.md
+git commit -m "Updated README using feature branch"
+
+
+15. Push the feature branch to GitHub.
+git push -u origin feature/update-readme
+
+
+16. Open GitHub and create a Pull Request from feature/update-readme to main.
+17. Review and merge the Pull Request.
+18. Switch back to the main branch and update the local repository.
+git switch main
+git pull origin main
+
+
+19. Verify the repository status.
+git status
+
+
+exp3
+Procedure:
+1. Install Java JDK on the system.
+2. Verify Java installation.
+java -version
+
+
+3. Download Jenkins from the official website: https://www.jenkins.io/download/
+4. Select the Windows installer and install Jenkins.
+5. Configure Jenkins to run as a Windows service.
+6. Start the Jenkins service.
+7. Open a web browser and navigate to:
+http://localhost:8080
+
+
+8. Unlock Jenkins using the initial administrator password stored at:
+C:\ProgramData\Jenkins\.jenkins\secrets\initialAdminPassword
+
+
+9. Install the suggested plugins.
+10. Create an administrator account.
+11. Open the Jenkins Dashboard.
+12. Click New Item.
+13. Enter the project name as Hello-World.
+14. Select Freestyle Project and click OK.
+15. Go to the Build Steps section.
+16. Select Execute Windows batch command.
+17. Enter the following commands:
+echo Hello World
+echo Welcome to Jenkins
+echo Experiment 3 completed successfully
+
+
+18. Click Save.
+19. Click Build Now to execute the job.
+20. Open Build History and select the latest build.
+21. Click Console Output to view the execution result.
+22. Verify that the build finishes successfully.
+
+
+exp 4
+Open GitHub and log in to your account.
+Create or open the repository named Git-Practical-2.
+Create a new file named Jenkinsfile in the repository.
+Add the following Pipeline script
+Commit the Jenkinsfile to the main branch.
+Open the Jenkins Dashboard.
+Click New Item.
+Enter the project name as my-first-pipeline.
+Select Pipeline and click OK.
+Scroll to the Pipeline configuration section.
+Select Pipeline script from SCM.
+Select Git as the Source Code Management option.
+Enter the GitHub repository URL.
+Enter the branch name as */main.
+Set the Script Path as Jenkinsfile.
+Click Save.
+Click Build Now to execute the pipeline.
+Open Console Output to monitor execution.
+Verify that the Checkout, Build, Test and Success stages execute successfully.
+Confirm the final message:
