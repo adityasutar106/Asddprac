@@ -1,0 +1,261 @@
+
+### Step 1: Check Git Installation
+
+Open Git Bash and execute:
+
+```bash
+git --version
+```
+
+This command checks whether Git is installed successfully.
+
+### Step 2: Configure Git Username and Email
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your-email@gmail.com"
+```
+
+These commands configure the username and email used to identify commits.
+
+### Step 3: Verify Git Configuration
+
+```bash
+git config --list
+```
+
+This displays the configured Git settings.
+
+### Step 4: Create a Repository on GitHub
+
+1. Log in to GitHub.
+2. Click on New Repository.
+3. Enter repository name: `Git-Practical-2`.
+4. Select Public.
+5. Initialize the repository with a README file.
+6. Click Create Repository.
+
+### Step 5: Clone the Repository
+
+Copy the HTTPS URL of your GitHub repository and execute:
+
+```bash
+git clone YOUR_REPOSITORY_URL
+```
+
+This downloads the remote repository to the local computer.
+
+### Step 6: Navigate to the Repository
+
+```bash
+cd Git-Practical-2
+```
+
+### Step 7: Check Current Directory
+
+```bash
+pwd
+```
+
+This displays the current working directory.
+
+### Step 8: List Repository Files
+
+```bash
+ls
+```
+
+This displays the files present in the repository.
+
+### Step 9: Check Repository Status
+
+```bash
+git status
+```
+
+This displays the current branch and working tree status.
+
+### Step 10: Edit README File
+
+```bash
+notepad README.md
+```
+
+The README file opens in Notepad.
+
+Add some information about the practical, save the file using Ctrl + S and close Notepad.
+
+### Step 11: Stage the Changes
+
+```bash
+git add README.md
+```
+
+This command adds the modified README file to the staging area.
+
+### Step 12: Verify Staged Changes
+
+```bash
+git status
+```
+
+The README file should appear under Changes to be committed.
+
+### Step 13: Commit the Changes
+
+```bash
+git commit -m "FIRST CHANGE"
+```
+
+This saves the staged changes in the local Git repository with a commit message.
+
+### Step 14: Push Changes to GitHub
+
+```bash
+git push -u origin main
+```
+
+This uploads the local commits to the remote GitHub repository and sets the upstream tracking branch.
+
+If GitHub authentication is requested, complete the authentication process in the browser.
+
+Verify that the README changes are visible on GitHub.
+
+---
+
+## Part B: Collaboration Workflow Using Branching and Pull Requests
+
+### Step 1: Create a New Feature Branch
+
+Make sure you are inside the `Git-Practical-2` repository.
+
+Execute:
+
+```bash
+git switch -c feature/update-readme
+```
+
+This creates and switches to a new branch named `feature/update-readme`.
+
+### Step 2: Verify the Branch
+
+```bash
+git branch
+```
+
+The asterisk (*) indicates the currently active branch.
+
+### Step 3: Edit README in the Feature Branch
+
+```bash
+notepad README.md
+```
+
+Add the following content:
+
+```text
+## Collaboration Workflow
+
+This change is made using a separate feature branch.
+Learning Git branching and collaborative development.
+```
+
+Save the file and close Notepad.
+
+### Step 4: Check the Modified Files
+
+```bash
+git status
+```
+
+This displays the modified README file.
+
+### Step 5: Stage the Changes
+
+```bash
+git add README.md
+```
+
+This adds the modified file to the staging area.
+
+### Step 6: Commit the Changes
+
+```bash
+git commit -m "Updated README using feature branch"
+```
+
+This creates a commit containing the changes made in the feature branch.
+
+### Step 7: Push the Feature Branch
+
+```bash
+git push -u origin feature/update-readme
+```
+
+This uploads the feature branch to GitHub.
+
+### Step 8: Create a Pull Request
+
+1. Open the GitHub repository.
+2. Select Compare & Pull Request for the newly pushed branch.
+3. Set the base branch to `main`.
+4. Set the compare branch to `feature/update-readme`.
+5. Enter the title: `Updated README using feature branch`.
+6. Click Create Pull Request.
+
+A Pull Request is created to request merging the feature branch into the main branch.
+
+### Step 9: Review the Pull Request
+
+Check the Files Changed section to verify the modifications.
+
+GitHub displayed:
+- No merge conflicts with the base branch.
+- Changes can be merged automatically.
+
+### Step 10: Merge the Pull Request
+
+1. Click Merge Pull Request.
+2. Click Confirm Merge.
+3. Verify that GitHub displays Pull Request successfully merged and closed.
+
+The feature branch changes are now integrated into the main branch.
+
+### Step 11: Switch Back to Main Branch
+
+Open Git Bash and execute:
+
+```bash
+git switch main
+```
+
+This switches the local repository to the main branch.
+
+### Step 12: Synchronize the Local Repository
+
+```bash
+git pull origin main
+```
+
+This downloads and integrates the latest changes from the remote main branch into the local main branch.
+
+### Step 13: Verify Repository Status
+
+```bash
+git status
+```
+
+Expected output:
+
+```text
+On branch main
+Your branch is up to date with 'origin/main'.
+nothing to commit, working tree clean
+```
+
+### Step 14: Verify Branches
+
+```bash
+git branch
+```
+
