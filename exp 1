@@ -1,0 +1,161 @@
+
+## Procedure
+
+### Step 1: Create a Jira Project
+1. Open https://www.atlassian.com/software/jira.
+2. Log in using your Atlassian account.
+3. Navigate to Projects/Spaces.
+4. Click on Create Project.
+5. Select Software Development.
+6. Choose the Scrum template.
+7. Select the project management type if prompted.
+8. Enter Project Name as Online Food Ordering System.
+9. Enter Project Key as OFS.
+10. Click Create Project.
+
+### Step 2: Create Epics
+1. Open the created project.
+2. Navigate to Backlog.
+3. Open the Epics panel.
+4. Click Create Epic.
+5. Enter the Epic name and description.
+6. Save the Epic.
+7. Repeat the process to create the following five Epics:
+
+| Sr. No. | Epic Name |
+|---|---|
+| 1 | User Management |
+| 2 | Restaurant Management |
+| 3 | Order Management |
+| 4 | Payment Management |
+| 5 | Delivery Tracking |
+
+### Step 3: Create User Stories
+1. Navigate to Backlog.
+2. Click Create.
+3. Select issue type as Story.
+4. Enter the Summary and Description.
+5. Link the Story to its respective Epic.
+6. Click Create.
+7. Repeat for all eight User Stories.
+
+**User Story 1: Customer Registration**
+
+Epic: User Management
+
+Description: As a customer, I want to register by providing my name, email address and password so that I can create an account and use the food ordering system.
+
+**User Story 2: Customer Login**
+
+Epic: User Management
+
+Description: As a registered customer, I want to log in using my email and password so that I can securely access my account.
+
+**User Story 3: View Restaurants**
+
+Epic: Restaurant Management
+
+Description: As a customer, I want to view the list of available restaurants so that I can choose a restaurant according to my preferences.
+
+**User Story 4: Search Food Items**
+
+Epic: Restaurant Management
+
+Description: As a customer, I want to search for food items by name or category so that I can quickly find the food I want to order.
+
+**User Story 5: Add Items to Cart**
+
+Epic: Order Management
+
+Description: As a customer, I want to add selected food items to my cart so that I can review my order before placing it.
+
+**User Story 6: Place Food Order**
+
+Epic: Order Management
+
+Description: As a customer, I want to place an order after reviewing my cart so that the restaurant can prepare and deliver my food.
+
+**User Story 7: Online Payment**
+
+Epic: Payment Management
+
+Description: As a customer, I want to pay for my food order using an online payment method so that I can complete my purchase securely.
+
+**User Story 8: Track Food Delivery**
+
+Epic: Delivery Tracking
+
+Description: As a customer, I want to track my food delivery status so that I know whether my order is being prepared, dispatched or delivered.
+
+### Step 4: Create Sprint 1
+1. Open the Backlog section.
+2. Click Create Sprint.
+3. A new Sprint section will appear.
+4. Move the following three User Stories into Sprint 1:
+   - Customer Registration
+   - Customer Login
+   - View Restaurants
+5. Click Start Sprint.
+6. Enter the following details:
+   - Sprint Name: Sprint 1
+   - Duration: 1 Week
+   - Sprint Goal: Develop basic customer registration, login and restaurant viewing functionality.
+7. Click Start.
+
+### Step 5: Work with Scrum Board
+1. Open the Active Sprints or Board section.
+2. View the tasks assigned to Sprint 1.
+3. Move Customer Registration from To Do to In Progress and then to Done.
+4. Move Customer Login from To Do to In Progress.
+5. Keep View Restaurants in To Do.
+6. Verify the updated task statuses.
+
+**Final Status:**
+- Customer Registration – Done
+- Customer Login – In Progress
+- View Restaurants – To Do
+
+### Step 6: Explore List View
+1. Open the Jira project.
+2. Click List from the left sidebar.
+3. Observe all the created User Stories.
+4. Check their issue keys, summaries and statuses.
+5. Observe the Assignee, Priority and Issue Type fields if available.
+6. Verify the task statuses.
+
+### Step 7: Explore Timeline View
+1. Open the Jira project.
+2. Click Timeline.
+3. Observe all five Epics.
+4. Open an Epic to view its details.
+5. Set the Start Date and Due Date if available.
+6. Save the changes.
+7. Observe the visual timeline bars.
+
+Sample schedule for User Management:
+- Start Date: 03/11/2026
+- Due Date: 10/11/2026
+
+### Step 8: Add Collaborators
+1. Open the Jira project.
+2. Navigate to Project Settings or Space Settings.
+3. Open the People or Access section.
+4. Click Add People.
+5. Enter the registered email address of a team member.
+6. Select an appropriate project role.
+7. Click Add.
+8. Verify that the collaborator appears in the People list.
+
+### Step 9: Assign Tasks to Team Members
+1. Open the Scrum Board or List View.
+2. Select a User Story.
+3. Open its issue details.
+4. Locate the Assignee field.
+5. Search for the collaborator's username or email.
+6. Select the team member.
+7. Save the changes if required.
+8. Verify the assigned person.
+
+### Step 10: Understand DevOps Pipeline Integration
+Jira can be integrated with GitHub and Jenkins to support software development and delivery.
+
