@@ -1,0 +1,316 @@
+
+
+1. Jenkins must be installed and running.
+2. A GitHub account must be available.
+3. Git must be installed on the system.
+4. A GitHub repository must be created.
+5. Jenkins must be accessible through `http://localhost:8080`.
+
+## 4. Theory
+
+**Jenkins:** Jenkins is an open-source automation server used for Continuous Integration and Continuous Delivery. It automates software building, testing and deployment.
+
+**GitHub:** GitHub is a cloud-based platform used to host and manage source code repositories using Git.
+
+**CI/CD Pipeline:** A CI/CD pipeline is an automated workflow that helps developers integrate code changes, build applications, test software and deliver updates efficiently.
+
+### Working of Jenkins and GitHub Integration
+
+1. Source code and the Jenkinsfile are stored in a GitHub repository.
+2. Jenkins connects to the GitHub repository.
+3. Jenkins retrieves the pipeline definition from the repository.
+4. The pipeline executes its configured stages.
+5. Build and test commands are executed.
+6. Jenkins displays the execution result.
+
+### Pipeline Flow
+
+GitHub Repository  
+↓  
+Jenkins Integration  
+↓  
+Checkout Stage  
+↓  
+Build Stage  
+↓  
+Test Stage  
+↓  
+Success
+
+---
+
+# 5. Detailed Procedure
+
+## Part A: Starting Jenkins
+
+### Step 1: Launch Jenkins
+
+1. Open Google Chrome.
+2. Enter the following URL:
+
+   `http://localhost:8080`
+
+3. Press Enter.
+4. Log in using the Jenkins administrator username and password.
+5. The Jenkins Dashboard will appear.
+
+### Step 2: Verify Git Installation in Jenkins
+
+1. On the Jenkins Dashboard, click **Manage Jenkins**.
+2. Open **Tools** or **Global Tool Configuration**, depending on the Jenkins interface.
+3. Locate the Git installations section.
+4. Check whether Git is configured.
+5. If Git is not configured, add a Git installation and specify the Git executable path or enable automatic installation.
+6. Save the configuration.
+
+Git is required by Jenkins to access source code stored in Git repositories.
+
+## Part B: Preparing the GitHub Repository
+
+### Step 3: Open GitHub
+
+1. Open https://github.com/.
+2. Log in using your GitHub account.
+3. Open the existing repository named `Git-Practical-2`.
+4. Click the green **Code** button.
+5. Select the HTTPS option.
+6. Copy the repository URL.
+
+Example format:
+
+`https://github.com/username/Git-Practical-2.git`
+
+The actual URL must contain your GitHub username and repository name.
+
+### Step 4: Create a Jenkinsfile
+
+1. Open the `Git-Practical-2` repository.
+2. Click **Add file**.
+3. Select **Create new file**.
+4. Enter the filename:
+
+   `Jenkinsfile`
+
+5. Do not add any file extension.
+6. Enter the following pipeline code.
+
+### Jenkinsfile Code
+
+```groovy
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                echo 'Repository downloaded successfully.'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                bat 'echo Building Project...'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                bat 'echo Testing Project...'
+            }
+        }
+
+        stage('Success') {
+            steps {
+                bat 'echo CI/CD Pipeline Executed Successfully.'
+            }
+        }
+    }
+}
+```
+
+### Explanation of Jenkinsfile
+
+**1. pipeline**
+
+Defines the complete Jenkins pipeline.
+
+**2. agent any**
+
+Allows the pipeline to execute on any available Jenkins agent.
+
+**3. stages**
+
+Contains all the stages of the pipeline.
+
+**4. stage('Checkout')**
+
+Displays a message indicating repository access. Jenkins retrieves the Jenkinsfile from the configured SCM repository; this stage itself only prints a message.
+
+**5. stage('Build')**
+
+Executes a Windows batch command to simulate the project build.
+
+**6. stage('Test')**
+
+Executes a Windows batch command to simulate software testing.
+
+**7. stage('Success')**
+
+Displays a message indicating successful pipeline execution.
+
+**8. bat**
+
+The `bat` command is used to execute Windows batch commands in Jenkins.
+
+### Step 5: Commit the Jenkinsfile
+
+1. Scroll down to the Commit changes section.
+2. Enter the commit message:
+
+   `Add Jenkins CI/CD pipeline`
+
+3. Select **Commit directly to the main branch** if that is the intended branch.
+4. Click **Commit changes**.
+
+The Jenkinsfile is now stored in the GitHub repository.
+
+## Part C: Creating a Jenkins Pipeline Job
+
+### Step 6: Open Jenkins Dashboard
+
+1. Return to the Jenkins browser tab.
+2. Open the Jenkins Dashboard.
+3. Click **New Item** from the left-side menu.
+
+### Step 7: Create a Pipeline Project
+
+1. Enter the project name:
+
+   `my-first-pipeline`
+
+2. Select **Pipeline** from the project types.
+3. Click **OK**.
+
+A new Pipeline configuration page will appear.
+
+## Part D: Connecting Jenkins with GitHub
+
+### Step 8: Configure the Pipeline
+
+1. Scroll down to the Pipeline section.
+2. Locate the Definition dropdown.
+3. Select:
+
+   **Pipeline script from SCM**
+
+4. A new SCM dropdown will appear.
+5. Select:
+
+   **Git**
+
+### Step 9: Enter Repository Details
+
+1. Locate the Repository URL field.
+2. Paste the HTTPS URL copied from GitHub.
+
+Example:
+
+`https://github.com/username/Git-Practical-2.git`
+
+3. Keep the Credentials field empty if the repository is public and Jenkins can access it without authentication.
+4. Under Branch Specifier, enter:
+
+   `*/main`
+
+5. Under Script Path, enter:
+
+   `Jenkinsfile`
+
+6. Verify all the details.
+
+| Configuration | Value |
+|---|---|
+| Definition | Pipeline script from SCM |
+| SCM | Git |
+| Repository URL | Your GitHub repository URL |
+| Branch | `*/main` |
+| Script Path | `Jenkinsfile` |
+
+7. Click **Save**.
+
+Jenkins is now configured to retrieve the pipeline definition from GitHub.
+
+## Part E: Executing the CI/CD Pipeline
+
+### Step 10: Run the Pipeline
+
+1. Open the `my-first-pipeline` project.
+2. Locate the **Build Now** option on the left-side menu.
+3. Click **Build Now**.
+4. Jenkins will start executing the pipeline.
+5. Wait for the execution to finish.
+
+### Step 11: Check Build History
+
+1. Locate the Build History section.
+2. A new build number, such as `#1`, will appear.
+3. Click the latest build number.
+4. Open **Console Output**.
+
+### Step 12: Verify Console Output
+
+The Console Output page displays the execution logs of the pipeline.
+
+Expected output includes:
+
+```text
+Repository downloaded successfully.
+
+Building Project...
+
+Testing Project...
+
+CI/CD Pipeline Executed Successfully.
+
+Finished: SUCCESS
+```
+
+The final line `Finished: SUCCESS` confirms that the pipeline completed successfully.
+
+## Part F: Verifying Pipeline Stages
+
+### Step 13: View Pipeline Stages
+
+1. Return to the Jenkins Pipeline job page.
+2. Open the latest build.
+3. Locate Pipeline Overview or Pipeline Stages, if available.
+4. Verify that all four stages have completed successfully.
+
+Expected stages:
+
+| Stage | Expected Status |
+|---|---|
+| Checkout | Success |
+| Build | Success |
+| Test | Success |
+| Success | Success |
+
+This verifies the execution of the configured pipeline stages.
+
+---
+
+# 6. Output
+
+The Jenkins Pipeline was executed successfully.
+
+The following messages were displayed:
+
+```text
+Building Project...
+Testing Project...
+CI/CD Pipeline Executed Successfully.
+
+Finished: SUCCESS
+```
+
